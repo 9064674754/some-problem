@@ -26,7 +26,7 @@ recognition.onresult=function(event){
         setTimeout(function()
         {
             take_snapshot();
-            document.getElementById("result1").innerHTML = '<img id="selfie1" src="' +data_uri+'"/>';
+           
             img_id="selfie2";
         speak_data="Taking next selfie in 5 seconds.";
         var utterThis1=new SpeechSynthesisUtterance(speak_data);
@@ -35,7 +35,7 @@ recognition.onresult=function(event){
         setTimeout(function()
         {
             take_snapshot();
-            document.getElementById("result2").innerHTML = '<img id="selfie2" src="'+data_uri+'"/>';
+         
             img_id="selfie3";
         speak_data="Taking next selfie in 5 seconds.";
         var utterThis2=new SpeechSynthesisUtterance(speak_data);
@@ -44,7 +44,6 @@ recognition.onresult=function(event){
         setTimeout(function()
         {
             take_snapshot();
-            document.getElementById("result3").innerHTML ='<img id="selfie3" src="'+data_uri+'"/>';
             
         },5000);
             
@@ -75,17 +74,4 @@ if(img_id=="selfie3"){
 document.getElementById("result3").innerHTML ='<img id="selfie3" src="'+data_uri+'"/>';
 }
 });
-}
-
-
-function speak(){
-
-    
-    var synth = window.speechSynthesis;
-    Webcam.attach(camera);
-
-    speak_data = "Taking your next Selfie in 5 seconds";
-    var utterThis = new SpeechSynthesisUtterance(speak_data);
-    synth.speak(utterThis);
-
 }
